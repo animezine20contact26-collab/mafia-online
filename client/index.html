@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+
+<html
+    lang="ar"
+    dir="rtl"
+>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>مافيا أونلاين</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<!-- ==================================================
+     HOME PAGE
+================================================== -->
+
+<main
+    id="homePage"
+    class="page home-page"
+>
+
+    <section class="home-card">
+
+        <div class="logo">
+            🕵️
+        </div>
+
+        <h1>
+            مافيا أونلاين
+        </h1>
+
+        <p class="subtitle">
+            لعبة الخداع، التحقيق والبقاء
+        </p>
+
+        <div id="accountSection">
+
+    <div class="input-group">
+
+        <label for="accountUsername">
+            اسم المستخدم
+        </label>
+
+        <input
+            type="text"
+            id="accountUsername"
+            placeholder="اسم المستخدم..."
+            maxlength="20"
+            autocomplete="username"
+        >
+
+    </div>
+
+    <div class="input-group">
+
+        <label for="accountPassword">
+            كلمة المرور
+        </label>
+
+        <input
+            type="password"
+            id="accountPassword"
+            placeholder="كلمة المرور..."
+            autocomplete="current-password"
+        >
+
+    </div>
+
+    <button
+        class="main-button"
+        type="button"
+        onclick="login()"
+    >
+        🔐 تسجيل الدخول
+    </button>
+
+    <button
+        class="secondary-button"
+        type="button"
+        onclick="register()"
+    >
+        📝 إنشاء حساب
+    </button>
+
+    <p
+        id="accountMessage"
+        class="home-message"
+    ></p>
+
+</div>
+
+        <div
+    id="homeMenu"
+    class="home-menu"
+    style="display:none;"
+>
+
+    <button
+        id="playButton"
+        class="main-button"
+        type="button"
+        onclick="showCreateRoomOptions()"
+    >
+        🎮 العب
+    </button>
+
+    <button
+        id="friendsButton"
+        class="secondary-button"
+        type="button"
+        onclick="showFriendsRooms()"
+    >
+        👥 أصدقاءك
+    </button>
+
+    <button
+        id="readyRoomsButton"
+        class="secondary-button"
+        type="button"
+        onclick="showReadyRooms()"
+    >
+        🏠 غرف جاهزة
+    </button>
+
+    <button
+    id="suggestionButton"
+    class="secondary-button"
+    type="button"
+    onclick="showSuggestionBox()"
+>
+    💡 اقترح فكرة
+</button>
+
+</div>
+
+<div
+    id="suggestionBox"
+    style="display:none;"
+>
+
+    <h2>
+        💡 اقترح فكرة
+    </h2>
+
+    <div class="input-group">
+
+        <label for="suggestionCategory">
+            نوع الاقتراح
+        </label>
+
+        <select id="suggestionCategory">
+
+            <option value="gameplay">
+                🎮 طريقة لعب جديدة
+            </option>
+
+            <option value="role">
+                🎭 دور جديد
+            </option>
+
+            <option value="design">
+                🎨 تحسين التصميم
+            </option>
+
+            <option value="bug">
+                🔧 إصلاح مشكل
+            </option>
+
+            <option value="other">
+                💡 فكرة أخرى
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="input-group">
+
+        <label for="suggestionText">
+            الاقتراح
+        </label>
+
+        <textarea
+            id="suggestionText"
+            placeholder="اكتب اقتراحك هنا..."
+            maxlength="1000"
+        ></textarea>
+
+    </div>
+
+    <button
+        class="main-button"
+        type="button"
+        onclick="sendSuggestion()"
+    >
+        📤 إرسال الاقتراح
+    </button>
+
+    <button
+        class="secondary-button"
+        type="button"
+        onclick="closeSuggestionBox()"
+    >
+        ❌ إغلاق
+    </button>
+
+    <p
+        id="suggestionMessage"
+        class="home-message"
+    ></p>
+
+</div>
+
+<div
+    id="friendsSection"
+    style="display:none;"
+>
+
+    <h2>
+        👥 أصدقاءك
+    </h2>
+
+    <div class="input-group">
+
+        <label for="friendUsername">
+            اسم المستخدم
+        </label>
+
+        <input
+            type="text"
+            id="friendUsername"
+            placeholder="اكتب اسم اللاعب..."
+            maxlength="20"
+        >
+
+    </div>
+
+    <button
+        class="main-button"
+        type="button"
+        onclick="sendFriendRequest()"
+    >
+        ➕ إضافة صديق
+    </button>
+
+    <div id="friendRequestsList"></div>
+
+    <div id="friendsList"></div>
+
+    <h3>
+    🏠 غرف أصدقاءك
+</h3>
+
+<div
+    id="friendsRoomsList"
+></div>
+
+</div>
+
+<section
+    id="readyRoomsSection"
+    style="display:none;"
+>
+    <h2>
+        🏠 غرف جاهزة
+    </h2>
+
+    
+
+    <button
+        class="secondary-button"
+        type="button"
+        onclick="showReadyRoomList()"
+    >
+        🚪 الانضمام
+    </button>
+
+    <div
+        id="readyRoomsList"
+        style="display:none;"
+    ></div>
+</section>
+
+        <p
+            id="homeMessage"
+            class="home-message"
+        ></p>
+
+        <div
+    id="createRoomOptions"
+    style="display:none;"
+>
+
+    <div class="input-group">
+
+        <label for="playerName">
+            اسم اللاعب
+        </label>
+
+        <input
+            type="text"
+            id="playerName"
+            placeholder="اكتب اسمك هنا..."
+            maxlength="20"
+            autocomplete="off"
+        >
+
+    </div>
+
+    <button
+        class="main-button"
+        type="button"
+        onclick="createRoom('friends')"
+    >
+        👥 غرفة الأصدقاء
+    </button>
+
+    <button
+    class="secondary-button"
+    type="button"
+    onclick="createRoom('ready')"
+>
+    🌍 غرفة للجميع
+</button>
+
+</div>
+
+    </section>
+
+</main>
+
+
+<!-- ==================================================
+     WAITING ROOM
+================================================== -->
+
+<main
+    id="roomPage"
+    class="page waiting-page"
+    style="display:none;"
+>
+
+    <section class="waiting-card">
+
+        <div class="room-header">
+
+            <div class="room-icon">
+                🏠
+            </div>
+
+            <div>
+
+                <h1>
+                    غرفة اللعب
+                </h1>
+
+                <p>
+                    في انتظار اللاعبين...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="current-player-card">
+
+            <div class="current-player-icon">
+                👤
+            </div>
+
+            <div>
+
+                <span>
+                    أنت تلعب باسم
+                </span>
+
+                <strong id="currentPlayerName">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="room-code-section">
+
+            <span>
+                🔐 رمز الغرفة
+            </span>
+
+            <strong
+                id="roomCodeDisplay"
+                class="room-code"
+            >
+                ------
+            </strong>
+
+            <button
+                class="copy-code-button"
+                type="button"
+                onclick="copyRoomCode()"
+            >
+                📋 نسخ الرمز
+            </button>
+
+        </div>
+
+
+        <div class="players-section">
+
+            <div class="players-header">
+
+                <h2>
+                    👥 اللاعبون
+                </h2>
+
+                <span
+                    id="playersCount"
+                    class="players-count"
+                >
+                    0
+                </span>
+
+            </div>
+
+            <ul id="playersList"></ul>
+
+        </div>
+
+        
+
+
+        <div class="room-actions">
+
+            <div
+                id="startGameSection"
+                class="start-game-section"
+            >
+
+                <button
+                    id="startGameButton"
+                    class="start-game-button"
+                    type="button"
+                    onclick="startGame()"
+                >
+                    🎮 بدء اللعبة
+                </button>
+
+                <p
+                    id="startGameMessage"
+                    class="start-game-message"
+                ></p>
+
+            </div>
+
+            <p
+    id="roomMessage"
+    class="room-message"
+>
+    يجب أن يكون هناك 4 لاعبين على الأقل.
+</p>
+
+        </div>
+
+        <button
+    type="button"
+    class="leave-room-btn"
+    onclick="leaveCurrentRoom()"
+>
+    ← رجوع
+</button>
+
+    </section>
+
+</main>
+
+
+<!-- ==================================================
+     ROLE REVEAL
+================================================== -->
+
+<main
+    id="rolePage"
+    class="page role-page"
+    style="display:none;"
+>
+
+    <section
+    id="rolePage"
+    class="role-page"
+>
+
+    <div class="role-reveal-card">
+
+        <!-- ========================================
+             HEADER
+        ======================================== -->
+
+        <div class="role-header">
+
+            <div class="role-header-icon">
+                🎭
+            </div>
+
+            <h1>
+                دورك في اللعبة
+            </h1>
+
+            <p class="role-subtitle">
+                اكتشف دورك واحفظه جيدًا
+            </p>
+
+        </div>
+
+
+        <!-- ========================================
+             اللاعب الحالي
+        ======================================== -->
+
+        <div class="my-player-role">
+
+            <div class="role-section-label">
+                👤 أنت
+            </div>
+
+
+            <div class="my-player-content">
+
+                
+
+
+                <!-- معلومات الدور -->
+
+                <div class="my-role-container">
+
+    <!-- 🖼️ صورة الدور -->
+
+    <div
+        id="myRoleImage"
+        class="my-role-image"
+    ></div>
+
+
+    <!-- 🎭 اسم الدور -->
+
+    <h2
+        id="myRoleName"
+        class="my-role-name"
+    >
+        —
+    </h2>
+
+
+    <!-- 📖 شرح الدور -->
+
+    <p
+        id="myRoleDescription"
+        class="my-role-description"
+    >
+        —
+    </p>
+
+</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================
+             تنبيه السرية
+        ======================================== -->
+
+        <div class="secret-warning">
+
+            <span class="secret-warning-icon">
+                🤫
+            </span>
+
+            <div>
+
+                <strong>
+                    دورك سري
+                </strong>
+
+                <p>
+                    لا تُظهر شاشتك لأي لاعب آخر
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================
+             أدوار الجولة
+        ======================================== -->
+
+        <div class="round-roles-section">
+
+            <div class="role-section-label">
+                🎭 أدوار هذه الجولة
+            </div>
+
+            <p class="round-roles-description">
+                هذه هي الأدوار المشاركة في هذه الجولة
+            </p>
+
+            <div
+                id="roundRolesList"
+                class="round-roles-list"
+            ></div>
+
+        </div>
+
+
+        <!-- ========================================
+             زر إخفاء الدور
+        ======================================== -->
+
+        <div class="role-action-section">
+
+            <button
+                id="hideRoleButton"
+                class="hide-role-button"
+                type="button"
+                onclick="hideRole()"
+            >
+
+                <span>
+                    🙈
+                </span>
+
+                <span>
+                    إخفاء الدور
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- ========================================
+             بعد إخفاء الدور
+        ======================================== -->
+
+        <div
+            id="hiddenRoleMessage"
+            class="hidden-role-message"
+            style="display:none;"
+        >
+
+            <div class="hidden-role-icon">
+                🔒
+            </div>
+
+            <div class="hidden-role-content">
+
+                <strong>
+                    تم إخفاء دورك
+                </strong>
+
+                <p>
+                    أنت الآن جاهز وتنتظر باقي اللاعبين
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- ==================================================
+     MAIN GAME ROOM
+================================================== -->
+
+<main
+    id="gamePage"
+    class="page game-page"
+    style="display:none;"
+>
+
+    <div class="game-room">
+
+        <!-- =========================================
+             LEFT PLAYERS
+        ========================================== -->
+
+        <aside class="players-column left-column">
+
+            <div class="side-title">
+                👥 اللاعبون
+            </div>
+
+            <div
+                id="leftPlayers"
+                class="side-players"
+            ></div>
+
+        </aside>
+
+
+        <!-- =========================================
+             CENTER
+        ========================================== -->
+
+        <section class="game-center">
+
+            <!-- رأس المرحلة -->
+
+            <header class="center-header">
+
+                <div
+                    id="gameStatusIcon"
+                    class="phase-icon"
+                >
+                    🌙
+                </div>
+
+                <div class="phase-info">
+
+                    <h1 id="gamePhaseTitle">
+                        🌙 الليل
+                    </h1>
+
+                    <p id="gameStatusTitle">
+                        في انتظار المرحلة
+                    </p>
+
+                </div>
+
+                <div
+                    id="gameTimer"
+                    class="game-timer"
+                >
+                    30
+                </div>
+
+            </header>
+
+
+            <!-- =====================================
+                 المنطقة الرئيسية:
+                 ماذا يحدث الآن؟
+            ====================================== -->
+
+            <div
+                id="gameStatusMessage"
+                class="game-status-message"
+            >
+                انتظر بداية اللعبة.
+            </div>
+
+            <!-- =========================
+     📜 سجل أحداث اللعبة
+========================= -->
+<div id="gameEventsLog" class="game-events-log">
+
+    <div class="events-log-header">
+        <span>📜 سجل الأحداث</span>
+    </div>
+
+    <div id="gameEventsList" class="game-events-list">
+        <div class="game-event empty">
+            لا توجد أحداث بعد...
+        </div>
+    </div>
+
+</div>
+
+            <!-- =====================================
+                 نتيجة الحدث
+            ====================================== -->
+
+            <div
+                id="gameResultArea"
+                class="game-result-area"
+            ></div>
+
+
+            <!-- =====================================
+                 إجراءات الليل
+            ====================================== -->
+
+            <div
+                id="gameActionArea"
+                class="game-action-area"
+            ></div>
+
+
+            <!-- =====================================
+                 التصويت في النهار
+            ====================================== -->
+
+            <div
+                id="votingArea"
+                class="voting-area"
+                style="display:none;"
+            >
+
+                <div class="voting-header">
+
+                    <h2>
+                        🗳️ التصويت
+                    </h2>
+
+                    <p id="voteInstruction">
+                        اختر اللاعب الذي تريد التصويت عليه
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="votingList"
+                    class="voting-list"
+                ></div>
+
+
+                <div
+                    id="voteStatus"
+                    class="vote-status"
+                >
+                    لم يصوت أحد بعد.
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 نتيجة الليل
+            ====================================== -->
+
+            <div
+                id="nightResultArea"
+                class="center-result-area"
+            ></div>
+
+
+            <!-- =====================================
+                 أسفل الوسط
+            ====================================== -->
+
+            <div class="center-footer">
+
+                <span>
+                    🏠 غرفة اللعبة
+                </span>
+
+                <span id="centerRoomCode">
+                    ------
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             RIGHT PLAYERS
+        ========================================== -->
+
+        <aside class="players-column right-column">
+
+            <div class="side-title">
+                👥 اللاعبون
+            </div>
+
+            <div
+                id="rightPlayers"
+                class="side-players"
+            ></div>
+
+        </aside>
+
+    </div>
+
+
+</main>
+
+
+<!-- ==================================================
+     GAME OVER
+================================================== -->
+
+<main
+    id="gameOverPage"
+    class="page game-over-page"
+    style="display:none;"
+>
+
+    <section class="game-over-card">
+
+        <div class="trophy">
+            🏆
+        </div>
+
+        <h1>
+            انتهت اللعبة
+        </h1>
+
+        <div
+            id="winnerMessage"
+            class="game-over-message"
+        ></div>
+
+        <div class="final-roles">
+
+            <h2>
+                🎭 الأدوار الحقيقية
+            </h2>
+
+            <div
+                id="finalPlayersList"
+            ></div>
+
+        </div>
+
+        <button
+            id="restartButton"
+            class="restart-button"
+            type="button"
+            onclick="restartGame()"
+        >
+            🔄 لعب مرة أخرى
+        </button>
+
+    </section>
+
+</main>
+
+
+<!-- ==================================================
+     GAME OVER
+================================================== -->
+
+<main
+    id="gameOverPage"
+    class="page game-over-page"
+    style="display:none;"
+>
+
+    <section class="game-over-card">
+
+        <div class="trophy">
+            🏆
+        </div>
+
+        <h1>
+            انتهت اللعبة
+        </h1>
+
+        <div
+            id="winnerMessage"
+            class="game-over-message"
+        ></div>
+
+        <div class="final-roles">
+
+            <h2>
+                🎭 أدوار اللاعبين
+            </h2>
+
+            <div id="finalPlayersList"></div>
+
+        </div>
+
+        <button
+            id="restartButton"
+            class="restart-button"
+            type="button"
+            onclick="restartGame()"
+        >
+            🔄 لعب مرة أخرى
+        </button>
+
+    </section>
+
+</main>
+
+
+<!-- ==================================================
+     SOCKET.IO
+================================================== -->
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

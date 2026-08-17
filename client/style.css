@@ -1,0 +1,4518 @@
+/* ==================================================
+   GLOBAL
+================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        "Segoe UI",
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    direction: rtl;
+
+    color: #f8fafc;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #312e81 0%,
+            #0f172a 45%,
+            #020617 100%
+        );
+
+    min-height: 100vh;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.page {
+    min-height: 100vh;
+}
+
+
+/* ==================================================
+   HOME
+================================================== */
+
+.home-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+}
+
+.home-card {
+    width: min(100%, 480px);
+
+    padding: 42px;
+
+    background:
+        rgba(
+            15,
+            23,
+            42,
+            0.92
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.45
+        );
+
+    text-align: center;
+
+    backdrop-filter: blur(18px);
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    border-radius: 25px;
+
+    font-size: 48px;
+
+    background:
+        rgba(
+            124,
+            58,
+            237,
+            0.2
+        );
+
+    border:
+        1px solid
+        rgba(
+            167,
+            139,
+            250,
+            0.3
+        );
+}
+
+.home-card h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin-bottom: 35px;
+}
+
+.input-group {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #cbd5e1;
+
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 15px 17px;
+
+    border-radius: 14px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.1
+        );
+
+    outline: none;
+
+    background:
+        rgba(
+            2,
+            6,
+            23,
+            0.75
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            139,
+            92,
+            246,
+            0.12
+        );
+}
+
+.main-button,
+.secondary-button,
+.start-game-button,
+.restart-button {
+    width: 100%;
+
+    border: 0;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s;
+}
+
+.main-button {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #4f46e5
+        );
+}
+
+.secondary-button {
+    color: white;
+
+    background:
+        rgba(
+            51,
+            65,
+            85,
+            0.9
+        );
+}
+
+.main-button:hover,
+.secondary-button:hover,
+.start-game-button:hover,
+.restart-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+.divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 25px 0;
+
+    color: #64748b;
+}
+
+.divider span {
+    height: 1px;
+
+    flex: 1;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.1
+        );
+}
+
+
+/* ==================================================
+   WAITING ROOM
+================================================== */
+
+.waiting-page {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.waiting-card {
+    width: min(100%, 900px);
+
+    padding: 30px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(
+            15,
+            23,
+            42,
+            0.94
+        );
+
+    box-shadow:
+        0 30px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.45
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+}
+
+.room-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+}
+
+.room-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            124,
+            58,
+            237,
+            0.18
+        );
+
+    font-size: 32px;
+}
+
+.room-header h1 {
+    font-size: 28px;
+}
+
+.room-header p {
+    color: #94a3b8;
+    margin-top: 5px;
+}
+
+.current-player-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 18px;
+
+    margin-bottom: 20px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(
+            30,
+            41,
+            59,
+            0.75
+        );
+}
+
+.current-player-icon {
+    font-size: 32px;
+}
+
+.current-player-card span {
+    display: block;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+.current-player-card strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 18px;
+}
+
+.room-code-section {
+    text-align: center;
+
+    padding: 22px;
+
+    margin-bottom: 25px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            2,
+            6,
+            23,
+            0.6
+        );
+}
+
+.room-code {
+    display: block;
+
+    font-size: 38px;
+
+    letter-spacing: 8px;
+
+    margin: 10px 0 15px;
+
+    color: #c4b5fd;
+}
+
+.copy-code-button {
+    border: 0;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    color: white;
+
+    background: #334155;
+}
+
+.players-section {
+    margin-bottom: 25px;
+}
+
+.players-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.players-header h2 {
+    font-size: 20px;
+}
+
+.players-count {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #7c3aed;
+
+    font-weight: 700;
+}
+
+#playersList {
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                250px,
+                1fr
+            )
+        );
+
+    gap: 10px;
+}
+
+.player-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(
+            30,
+            41,
+            59,
+            0.7
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.05
+        );
+}
+
+.player-card.me {
+    border-color:
+        rgba(
+            139,
+            92,
+            246,
+            0.6
+        );
+}
+
+.player-card.dead {
+    opacity: 0.5;
+}
+
+.player-avatar {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #1e293b;
+}
+
+.player-info {
+    flex: 1;
+}
+
+.player-name {
+    font-weight: 700;
+}
+
+.player-status {
+    margin-top: 4px;
+
+    font-size: 12px;
+
+    color: #94a3b8;
+}
+
+.host-badge,
+.you-badge {
+    display: inline-block;
+
+    padding: 3px 7px;
+
+    margin-right: 5px;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+}
+
+.host-badge {
+    background:
+        rgba(
+            245,
+            158,
+            11,
+            0.2
+        );
+
+    color: #fbbf24;
+}
+
+.you-badge {
+    background:
+        rgba(
+            34,
+            197,
+            94,
+            0.15
+        );
+
+    color: #4ade80;
+}
+
+.kick-button {
+    border: 0;
+
+    padding: 8px 10px;
+
+    border-radius: 9px;
+
+    color: white;
+
+    background: #7f1d1d;
+}
+
+.start-game-section {
+    text-align: center;
+}
+
+.start-game-button {
+    max-width: 350px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #15803d
+        );
+}
+
+.start-game-button:disabled {
+    opacity: 0.45;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.start-game-message {
+    margin-top: 10px;
+
+    color: #94a3b8;
+}
+
+
+/* ==================================================
+   ROLE REVEAL
+================================================== */
+
+.role-page {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+.role-reveal-card {
+    width: min(100%, 850px);
+
+    padding: 35px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    background:
+        rgba(
+            15,
+            23,
+            42,
+            0.96
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    box-shadow:
+        0 35px 100px
+        rgba(
+            0,
+            0,
+            0,
+            0.5
+        );
+}
+
+.role-header-icon {
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+.role-reveal-card h1 {
+    font-size: 32px;
+}
+
+.role-subtitle {
+    color: #94a3b8;
+
+    margin-top: 8px;
+
+    margin-bottom: 30px;
+}
+
+.role-section-label {
+    font-weight: 700;
+
+    color: #cbd5e1;
+
+    margin-bottom: 12px;
+}
+
+.my-player-role {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.my-player-image-box {
+    width: 130px;
+    height: 130px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border:
+        4px solid
+        #8b5cf6;
+
+    background: #1e293b;
+
+    box-shadow:
+        0 0 35px
+        rgba(
+            139,
+            92,
+            246,
+            0.35
+        );
+}
+
+.my-player-image-box img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.my-role-image {
+    margin-top: 18px;
+
+    transition:
+        opacity 0.3s,
+        filter 0.3s;
+}
+
+.personal-role-image {
+    width: 150px;
+    height: 150px;
+
+    object-fit: contain;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+}
+
+.my-role-image.role-hidden {
+    opacity: 0;
+
+    filter: blur(20px);
+}
+
+.round-roles-section {
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(
+            2,
+            6,
+            23,
+            0.5
+        );
+}
+
+.round-roles-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 14px;
+}
+
+.round-role-button {
+    width: 100px;
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        2px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            30,
+            41,
+            59,
+            0.7
+        );
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.round-role-button:hover {
+    transform: translateY(-5px);
+
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 10px 30px
+        rgba(
+            139,
+            92,
+            246,
+            0.2
+        );
+}
+
+.round-role-button.selected {
+    border-color: #a78bfa;
+
+    transform: scale(1.06);
+}
+
+.round-role-button img {
+    width: 82px;
+    height: 82px;
+
+    object-fit: contain;
+}
+
+.secret-warning {
+    margin: 25px 0;
+
+    color: #fbbf24;
+
+    font-size: 14px;
+}
+
+.hide-role-button {
+    border: 0;
+
+    padding: 14px 30px;
+
+    border-radius: 14px;
+
+    color: white;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #4f46e5
+        );
+}
+
+.hidden-role-message {
+    margin-top: 20px;
+
+    color: #4ade80;
+
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   MAIN GAME ROOM
+================================================== */
+
+.game-page {
+    width: 100%;
+
+    padding: 18px;
+
+    align-items: stretch;
+}
+
+.game-room {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(170px, 220px)
+        minmax(420px, 1fr)
+        minmax(170px, 220px);
+
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+
+/* ==================================================
+   PLAYER COLUMNS
+================================================== */
+
+.players-column {
+    min-width: 0;
+}
+
+.players-side {
+    padding: 18px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(
+            15,
+            23,
+            42,
+            0.9
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(
+            0,
+            0,
+            0,
+            0.3
+        );
+}
+
+.side-title {
+    text-align: center;
+
+    padding-bottom: 15px;
+
+    margin-bottom: 15px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+.side-players {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.side-player-card {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    text-align: center;
+
+    gap: 4px;
+
+    padding: 7px;
+
+    margin-bottom: 7px;
+
+    min-height: 0;
+
+    border-radius: 17px;
+
+    background:
+        rgba(
+            30,
+            41,
+            59,
+            0.7
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.05
+        );
+
+    transition:
+        transform 0.2s;
+}
+
+.side-player-card:hover {
+    transform: translateY(-2px);
+}
+
+.side-player-card.current-player {
+    border-color:
+        rgba(
+            139,
+            92,
+            246,
+            0.7
+        );
+
+    background:
+        rgba(
+            76,
+            29,
+            149,
+            0.25
+        );
+}
+
+.side-player-card.dead {
+    opacity: 0.45;
+
+    filter: grayscale(0.6);
+}
+
+.side-player-name {
+    display: block;
+
+    order: 1;
+
+    margin-bottom: 3px;
+
+    font-size: 14px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+}
+
+.side-player-image-box {
+    position: relative;
+
+    order: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.side-player-image {
+    width: 65px;
+    height: 65px;
+
+    display: block;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+
+    background: #1e293b;
+
+    border:
+        2px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.1
+        );
+
+    border-radius: 50%;
+}
+
+/* FIX: selector الصحيح */
+.side-player-card.current-player .side-player-image {
+    border-color: #8b5cf6;
+}
+
+.side-player-info {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.side-player-info strong {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+.side-player-info small {
+    color: #94a3b8;
+}
+
+.side-player-card .my-role-badge {
+    order: 3;
+
+    display: block;
+
+    width: fit-content;
+
+    margin-top: 3px;
+
+    padding: 3px 6px;
+
+    border-radius: 7px;
+
+    font-size: 10px;
+
+    line-height: 1.2;
+
+    color: #c4b5fd;
+
+    background:
+        rgba(
+            139,
+            92,
+            246,
+            0.15
+        );
+}
+
+.side-player-card small {
+    order: 4;
+
+    margin-top: 2px;
+
+    font-size: 9px;
+}
+
+
+/* ==================================================
+   VOTING BADGES ON SIDE PLAYERS
+================================================== */
+
+.side-vote-badge {
+    position: absolute;
+
+    top: -8px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    min-width: 28px;
+
+    height: 28px;
+
+    padding: 0 7px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dc2626;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    z-index: 5;
+
+    border: 2px solid white;
+
+    box-shadow:
+        0 4px 10px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+}
+
+
+/* ==================================================
+   GAME CENTER
+================================================== */
+
+.game-center {
+    position: relative;
+
+    min-width: 0;
+
+    min-height: 650px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 24px;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(
+                30,
+                41,
+                59,
+                0.96
+            ),
+            rgba(
+                15,
+                23,
+                42,
+                0.98
+            )
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(
+            0,
+            0,
+            0,
+            0.28
+        );
+
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   CENTER LIGHT
+================================================== */
+
+.game-center::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    top: -120px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background:
+        rgba(
+            124,
+            58,
+            237,
+            0.12
+        );
+
+    filter: blur(70px);
+
+    pointer-events: none;
+}
+
+
+/* ==================================================
+   CENTER HEADER
+================================================== */
+
+.center-header {
+    position: relative;
+
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-columns:
+        64px
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding-bottom: 20px;
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+}
+
+.phase-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        rgba(
+            124,
+            58,
+            237,
+            0.14
+        );
+
+    border:
+        1px solid
+        rgba(
+            167,
+            139,
+            250,
+            0.2
+        );
+
+    font-size: 28px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            0,
+            0,
+            0,
+            0.2
+        );
+}
+
+.phase-info {
+    min-width: 0;
+}
+
+.phase-info h1 {
+    margin: 0;
+
+    font-size: 21px;
+
+    font-weight: 900;
+}
+
+.phase-info p {
+    margin: 5px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   TIMER
+================================================== */
+
+.game-timer {
+    min-width: 62px;
+
+    padding: 9px 12px;
+
+    text-align: center;
+
+    border-radius: 14px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.06
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    color: #c4b5fd;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+
+/* ==================================================
+   STATUS MESSAGE
+================================================== */
+
+.game-status-message {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.045
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.06
+        );
+
+    color: #e2e8f0;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+
+/* ==================================================
+   ACTION AREA
+================================================== */
+
+.game-action-area {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    min-height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.game-action-button {
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #6d28d9
+        );
+
+    color: white;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.game-action-button:hover {
+    transform: translateY(-2px);
+}
+
+.game-action-button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ==================================================
+   RESULT AREA
+================================================== */
+
+.game-result-area,
+.center-result-area {
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+
+/* ==================================================
+   DETECTIVE RESULT
+================================================== */
+
+.detective-result-message {
+    width: min(100%, 420px);
+
+    margin: 0 auto;
+
+    padding: 14px 18px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(
+            59,
+            130,
+            246,
+            0.10
+        );
+
+    border:
+        1px solid
+        rgba(
+            59,
+            130,
+            246,
+            0.18
+        );
+
+    text-align: center;
+
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   VOTING AREA
+================================================== */
+
+.voting-area {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin-top: 24px;
+
+    padding: 18px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            2,
+            6,
+            23,
+            0.32
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+}
+
+.voting-header {
+    text-align: center;
+
+    margin-bottom: 16px;
+}
+
+.voting-header h2 {
+    margin: 0;
+
+    font-size: 19px;
+}
+
+.voting-header p {
+    margin: 6px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+#voteInstruction {
+    text-align: center;
+
+    color: #94a3b8;
+
+    margin-bottom: 20px;
+}
+
+.voting-list,
+#votingList {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                100px,
+                1fr
+            )
+        );
+
+    gap: 10px;
+}
+
+
+/* ==================================================
+   VOTE PLAYER CARD
+================================================== */
+
+.vote-player-card {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 14px 10px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(
+            30,
+            41,
+            59,
+            0.75
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s,
+        background 0.2s;
+}
+
+.vote-player-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #8b5cf6;
+}
+
+.vote-player-card.vote-disabled {
+    cursor: not-allowed;
+
+    opacity: 0.55;
+}
+
+.vote-player-card.vote-disabled:hover {
+    transform: none;
+}
+
+.vote-player-card.my-vote {
+    opacity: 1;
+
+    border-color: #a78bfa;
+
+    background:
+        rgba(
+            124,
+            58,
+            237,
+            0.25
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(
+            124,
+            58,
+            237,
+            0.2
+        );
+}
+
+.vote-player-card.self-vote-disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    filter: grayscale(0.35);
+}
+
+.vote-player-card.self-vote-disabled:hover {
+    transform: none;
+}
+
+.vote-player-card.eliminated {
+    opacity: 0.35;
+
+    filter: grayscale(1);
+
+    pointer-events: none;
+}
+
+.vote-image-box {
+    position: relative;
+
+    width: 78px;
+    height: 78px;
+}
+
+.vote-image-box img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        3px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.1
+        );
+}
+
+.vote-badge {
+    position: absolute;
+
+    top: -10px;
+
+    right: -8px;
+
+    z-index: 10;
+
+    min-width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 8px;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background: #7c3aed;
+
+    border:
+        3px solid
+        #0f172a;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 5px 15px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
+}
+
+.vote-player-card.my-vote .vote-badge {
+    background: #22c55e;
+}
+
+.vote-badge.vote-increased {
+    transform: scale(1.25);
+}
+
+.vote-player-name {
+    max-width: 110px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    text-align: center;
+
+    font-weight: 700;
+}
+
+.self-vote-label {
+    margin-top: 6px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    opacity: 0.8;
+}
+
+.vote-status,
+#voteStatus {
+    margin-top: 14px;
+
+    padding: 10px;
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   ROLE / MAFIA SELECTION
+================================================== */
+
+.role-selectable,
+.mafia-selectable {
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.role-selectable:hover,
+.mafia-selectable:hover {
+    transform: scale(1.08);
+
+    filter: brightness(1.15);
+}
+
+
+.role-selected {
+    transform: scale(1.08);
+
+    outline: 4px solid #22c55e;
+    outline-offset: 3px;
+
+    box-shadow:
+        0 0 0 5px rgba(34, 197, 94, 0.25),
+        0 0 30px rgba(34, 197, 94, 0.95);
+
+    filter: brightness(1.15);
+}
+
+.lawyer-selected {
+    transform: scale(1.08);
+
+    outline: 4px solid #22c55e;
+    outline-offset: 3px;
+
+    box-shadow:
+        0 0 0 5px rgba(34, 197, 94, 0.25),
+        0 0 30px rgba(34, 197, 94, 0.95);
+
+    filter: brightness(1.15);
+}
+
+/* 🕵️ اختيار المافيا */
+.mafia-selected {
+    transform: scale(1.08);
+
+    outline: 4px solid #ef4444;
+    outline-offset: 3px;
+
+    box-shadow:
+        0 0 0 5px rgba(239, 68, 68, 0.25),
+        0 0 30px rgba(239, 68, 68, 0.95);
+
+    filter: brightness(1.15);
+}
+
+
+/* ==================================================
+   CENTER FOOTER
+================================================== */
+
+.center-footer {
+    position: relative;
+
+    z-index: 1;
+
+    margin-top: auto;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* ==================================================
+   GAME OVER
+================================================== */
+
+.game-over-page {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+}
+
+.game-over-card {
+    width: min(100%, 700px);
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        rgba(
+            15,
+            23,
+            42,
+            0.95
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    box-shadow:
+        0 30px 90px
+        rgba(
+            0,
+            0,
+            0,
+            0.45
+        );
+}
+
+.trophy {
+    font-size: 75px;
+
+    margin-bottom: 15px;
+}
+
+.game-over-card h1 {
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+.winner-icon {
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+.winner-mafia h2 {
+    color: #f87171;
+}
+
+.winner-civilians h2 {
+    color: #4ade80;
+}
+
+.game-over-message p {
+    color: #94a3b8;
+
+    margin-top: 7px;
+}
+
+.final-roles {
+    margin-top: 30px;
+
+    text-align: right;
+}
+
+.final-roles h2 {
+    margin-bottom: 15px;
+}
+
+#finalPlayersList {
+    display: grid;
+
+    gap: 8px;
+}
+
+.final-player {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 13px 15px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(
+            30,
+            41,
+            59,
+            0.7
+        );
+}
+
+.final-player strong {
+    color: #c4b5fd;
+}
+
+.restart-button {
+    margin-top: 25px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #4f46e5
+        );
+}
+
+
+/* ==================================================
+   RESPONSIVE — 950px
+================================================== */
+
+@media (max-width: 950px) {
+
+    .game-room {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "center"
+            "right"
+            "left";
+    }
+
+    .game-center {
+        grid-area: center;
+
+        min-height: 72vh;
+    }
+
+    .right-column {
+        grid-area: right;
+    }
+
+    .left-column {
+        grid-area: left;
+    }
+
+    .players-side {
+        padding: 10px;
+    }
+
+    .side-players {
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+        gap: 8px;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVE — 700px
+================================================== */
+
+@media (max-width: 700px) {
+
+    .game-room {
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-areas:
+            "center center"
+            "left right";
+    }
+
+    .game-center {
+        grid-area: center;
+
+        min-height: 55vh;
+    }
+
+    .players-left {
+        grid-area: left;
+    }
+
+    .players-right {
+        grid-area: right;
+    }
+
+    .role-reveal-card {
+        padding: 20px;
+    }
+
+    .round-role-button {
+        width: 78px;
+        height: 78px;
+    }
+
+    .round-role-button img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .side-player-card {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .side-player-name {
+        font-size: 14px;
+    }
+
+    .side-player-image {
+        width: 65px;
+        height: 65px;
+    }
+
+    .game-center {
+        padding: 20px;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVE — 650px
+================================================== */
+
+@media (max-width: 650px) {
+
+    .game-center {
+        padding: 18px;
+
+        border-radius: 22px;
+    }
+
+    .center-header {
+        grid-template-columns:
+            52px
+            1fr
+            auto;
+
+        gap: 10px;
+    }
+
+    .phase-icon {
+        width: 52px;
+        height: 52px;
+
+        font-size: 25px;
+    }
+
+    .phase-info h1 {
+        font-size: 18px;
+    }
+
+    .phase-info p {
+        font-size: 12px;
+    }
+
+    .game-timer {
+        min-width: 55px;
+
+        font-size: 18px;
+    }
+
+    .voting-list,
+    #votingList {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVE — 480px
+================================================== */
+
+@media (max-width: 480px) {
+
+    .home-card,
+    .waiting-card,
+    .game-over-card {
+        padding: 22px;
+    }
+
+    .home-card h1 {
+        font-size: 30px;
+    }
+
+    .game-center-header h1 {
+        font-size: 24px;
+    }
+
+    .game-status-icon {
+        width: 55px;
+        height: 55px;
+
+        font-size: 30px;
+    }
+
+    .game-action-area {
+        grid-template-columns: 1fr;
+    }
+
+    .game-action-button {
+        width: 100%;
+    }
+
+    .side-player-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .side-player-name {
+        font-size: 13px;
+    }
+
+    .side-player-card .my-role-badge {
+        font-size: 9px;
+    }
+
+    #votingList {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+
+        gap: 10px;
+    }
+
+    .vote-player-card {
+        padding: 12px 8px;
+    }
+
+    .vote-image-box {
+        width: 70px;
+        height: 70px;
+    }
+
+    .vote-badge {
+        min-width: 30px;
+        height: 30px;
+
+        font-size: 13px;
+    }
+
+    .vote-player-name {
+        max-width: 90px;
+    }
+
+    .game-over-card h1 {
+        font-size: 28px;
+    }
+
+    .trophy {
+        font-size: 60px;
+    }
+}
+
+
+/* ==================================================
+   EXTRA SMALL SCREENS
+================================================== */
+
+@media (max-width: 360px) {
+
+    .game-page {
+        padding: 8px;
+    }
+
+    .game-center {
+        padding: 14px;
+    }
+
+    .center-header {
+        grid-template-columns:
+            45px
+            1fr
+            auto;
+
+        gap: 7px;
+    }
+
+    .phase-icon {
+        width: 45px;
+        height: 45px;
+
+        font-size: 22px;
+
+        border-radius: 14px;
+    }
+
+    .phase-info h1 {
+        font-size: 16px;
+    }
+
+    .phase-info p {
+        font-size: 11px;
+    }
+
+    .game-timer {
+        min-width: 48px;
+
+        padding: 7px;
+
+        font-size: 16px;
+    }
+
+    .voting-area {
+        padding: 12px;
+    }
+
+    .vote-image-box {
+        width: 62px;
+        height: 62px;
+    }
+
+    .vote-player-name {
+        max-width: 75px;
+
+        font-size: 12px;
+    }
+
+    .side-player-image {
+        width: 52px;
+        height: 52px;
+    }
+}
+
+/* ==================================================
+   🎮 تحسين ترتيب المنطقة الوسطى
+   ================================================== */
+
+.game-center {
+    justify-content: flex-start;
+}
+
+/* رأس المرحلة */
+.center-header {
+    flex-shrink: 0;
+}
+
+/* رسالة ماذا يحدث الآن */
+.game-status-message {
+    flex-shrink: 0;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/* منطقة الإجراءات */
+.game-action-area {
+    flex-shrink: 0;
+    margin-top: 16px;
+}
+
+/* النتائج */
+.game-result-area,
+.center-result-area {
+    flex-shrink: 0;
+    margin-top: 14px;
+}
+
+/* التصويت */
+.voting-area {
+    width: 100%;
+    max-width: 760px;
+    margin: 18px auto 0;
+    flex-shrink: 0;
+}
+
+/* عنوان التصويت */
+.voting-header {
+    margin-bottom: 12px;
+}
+
+/* كروت التصويت */
+.voting-list {
+    width: 100%;
+}
+
+/* نخلي الفراغ الكبير ما يبانش */
+.center-footer {
+    margin-top: auto;
+}
+
+/* ==================================================
+   📜 GAME EVENTS LOG
+================================================== */
+
+.game-events-log {
+    position: relative;
+    z-index: 2;
+
+    width: min(100%, 700px);
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(2, 6, 23, 0.45);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,0.03);
+}
+
+.events-log-header {
+    text-align: right;
+
+    padding-bottom: 12px;
+
+    margin-bottom: 10px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.06);
+
+    color: #e2e8f0;
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+.game-events-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    max-height: 190px;
+
+    overflow-y: auto;
+}
+
+.game-event {
+    padding: 9px 12px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(30,41,59,0.55);
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    text-align: right;
+
+    animation:
+        eventAppear .25s ease;
+}
+
+.game-event.empty {
+    color: #64748b;
+
+    text-align: center;
+
+    background: transparent;
+}
+
+.game-event.night {
+    border-right:
+        3px solid #8b5cf6;
+}
+
+.game-event.day {
+    border-right:
+        3px solid #f59e0b;
+}
+
+.game-event.mafia {
+    border-right:
+        3px solid #ef4444;
+}
+
+.game-event.doctor {
+    border-right:
+        3px solid #22c55e;
+}
+
+.game-event.detective {
+    border-right:
+        3px solid #3b82f6;
+}
+
+.game-events-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.game-events-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.game-events-list::-webkit-scrollbar-thumb {
+    background: rgba(139,92,246,0.4);
+
+    border-radius: 10px;
+}
+
+@keyframes eventAppear {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .game-events-log {
+        margin-top: 15px;
+
+        padding: 14px;
+    }
+
+    .game-events-list {
+        max-height: 160px;
+    }
+
+    .game-event {
+        font-size: 12px;
+    }
+}
+
+/* ========================================
+   📋 رسالة نسخ رمز الغرفة
+======================================== */
+
+.copy-message {
+
+    position: fixed;
+
+    top: 25px;
+    left: 50%;
+
+    transform:
+        translate(-50%, -20px);
+
+    background:
+        rgba(15, 23, 42, 0.95);
+
+    color: #ffffff;
+
+    padding:
+        12px 22px;
+
+    border-radius:
+        12px;
+
+    font-size:
+        15px;
+
+    font-weight:
+        700;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.25);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+    z-index: 99999;
+}
+
+.copy-message.show {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+/* ========================================
+   🧓 زر وصية الشيخ
+======================================== */
+
+.sheikh-wasiya-btn {
+    width: 100%;
+    min-height: 78px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 12px 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(88, 28, 135, 0.95),
+            rgba(49, 46, 129, 0.95)
+        );
+
+    color: #fff;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+
+/* 🧓 العنوان */
+
+.sheikh-wasiya-btn .wasiya-title {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+
+/* 📜 وصف الوصية */
+
+.sheikh-wasiya-btn small {
+    font-size: 13px;
+    font-weight: 500;
+
+    color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* 🖱️ عند المرور */
+
+.sheikh-wasiya-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
+
+    filter: brightness(1.08);
+}
+
+
+/* 👆 عند الضغط */
+
+.sheikh-wasiya-btn:active {
+    transform: translateY(1px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+/* 🚫 بعد اختيار الوصية */
+
+.sheikh-wasiya-btn:disabled {
+    cursor: default;
+    opacity: 0.7;
+    transform: none;
+    filter: none;
+}
+
+/* ========================================
+   🧓 نتيجة الشيخ
+======================================== */
+
+.side-player-card.sheikh-evil {
+    border-color: #ef4444;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(127, 29, 29, 0.55),
+            rgba(69, 10, 10, 0.75)
+        );
+    box-shadow:
+        0 0 18px rgba(239, 68, 68, 0.35);
+}
+
+.side-player-card.sheikh-good {
+    border-color: #22c55e;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 83, 45, 0.55),
+            rgba(5, 46, 22, 0.75)
+        );
+    box-shadow:
+        0 0 18px rgba(34, 197, 94, 0.35);
+}
+
+/* ==================================================
+   ✨ HOME PAGE - MODERN UI
+================================================== */
+
+.home-page {
+    position: relative;
+    overflow: hidden;
+}
+
+.home-page::before,
+.home-page::after {
+    content: "";
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    opacity: 0.22;
+
+    pointer-events: none;
+}
+
+.home-page::before {
+    top: 5%;
+    right: 8%;
+
+    background: #7c3aed;
+}
+
+.home-page::after {
+    bottom: 5%;
+    left: 8%;
+
+    background: #2563eb;
+}
+
+
+/* البطاقة الرئيسية */
+
+.home-card {
+    position: relative;
+    z-index: 1;
+
+    width: min(
+        100%,
+        520px
+    );
+
+    padding: 45px 38px;
+
+    border-radius: 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 23, 42, 0.96),
+            rgba(30, 41, 59, 0.92)
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.10
+        );
+
+    box-shadow:
+        0 35px 100px
+        rgba(
+            0,
+            0,
+            0,
+            0.55
+        );
+
+    backdrop-filter:
+        blur(22px);
+
+    animation:
+        homeCardEnter
+        0.6s
+        ease
+        both;
+}
+
+
+/* الشعار */
+
+.home-card .logo {
+    width: 96px;
+    height: 96px;
+
+    margin-bottom: 24px;
+
+    border-radius: 28px;
+
+    font-size: 50px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124, 58, 237, 0.30),
+            rgba(79, 70, 229, 0.16)
+        );
+
+    border:
+        1px solid
+        rgba(
+            167,
+            139,
+            250,
+            0.35
+        );
+
+    box-shadow:
+        0 15px 45px
+        rgba(
+            124,
+            58,
+            237,
+            0.25
+        );
+
+    animation:
+        logoFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+
+/* العنوان */
+
+.home-card h1 {
+    font-size: 38px;
+
+    font-weight: 900;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #c4b5fd
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+/* الوصف */
+
+.home-card .subtitle {
+    margin-bottom: 32px;
+
+    color: #94a3b8;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* الحقول */
+
+.home-card .input-group {
+    margin-bottom: 16px;
+}
+
+.home-card .input-group label {
+    margin-bottom: 9px;
+
+    font-size: 14px;
+
+    color: #cbd5e1;
+}
+
+.home-card .input-group input {
+    height: 54px;
+
+    padding:
+        0 18px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(
+            2,
+            6,
+            23,
+            0.72
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s,
+        transform 0.2s;
+}
+
+.home-card .input-group input:hover {
+    border-color:
+        rgba(
+            139,
+            92,
+            246,
+            0.35
+        );
+}
+
+.home-card .input-group input:focus {
+    transform:
+        translateY(-1px);
+
+    border-color:
+        #8b5cf6;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(
+            139,
+            92,
+            246,
+            0.12
+        );
+}
+
+
+/* الأزرار */
+
+.home-card
+.main-button,
+.home-card
+.secondary-button {
+    min-height: 54px;
+
+    margin-top: 8px;
+
+    border-radius: 16px;
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        filter 0.2s;
+}
+
+.home-card
+.main-button {
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #4f46e5
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            124,
+            58,
+            237,
+            0.28
+        );
+}
+
+.home-card
+.main-button:hover {
+    transform:
+        translateY(-3px);
+
+    filter:
+        brightness(1.08);
+
+    box-shadow:
+        0 18px 38px
+        rgba(
+            124,
+            58,
+            237,
+            0.38
+        );
+}
+
+.home-card
+.secondary-button {
+    background:
+        rgba(
+            30,
+            41,
+            59,
+            0.75
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+}
+
+.home-card
+.secondary-button:hover {
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(
+            51,
+            65,
+            85,
+            0.85
+        );
+
+    border-color:
+        rgba(
+            139,
+            92,
+            246,
+            0.35
+        );
+}
+
+
+/* الرسائل */
+
+.home-message {
+    min-height: 24px;
+
+    margin-top: 18px;
+
+    color: #fbbf24;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* خط الفصل */
+
+.home-card .divider {
+    margin:
+        22px 0;
+
+    opacity: 0.65;
+}
+
+
+/* حركة البطاقة */
+
+@keyframes homeCardEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* حركة الشعار */
+
+@keyframes logoFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-6px);
+    }
+}
+
+
+/* الهاتف */
+
+@media (max-width: 600px) {
+
+    .home-page {
+        padding: 18px;
+    }
+
+    .home-card {
+        padding:
+            32px 22px;
+
+        border-radius: 26px;
+    }
+
+    .home-card h1 {
+        font-size: 31px;
+    }
+
+    .home-card .logo {
+        width: 82px;
+        height: 82px;
+
+        font-size: 42px;
+    }
+}
+
+/* ==================================================
+   👥 FRIENDS + 🏠 READY ROOMS
+   PROFESSIONAL CARDS
+================================================== */
+
+
+/* القسم */
+
+#friendsSection {
+    width: 100%;
+    margin-top: 24px;
+    padding: 24px;
+
+    border-radius: 24px;
+
+    background:
+        rgba(15, 23, 42, 0.82);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 20px 55px
+        rgba(0, 0, 0, 0.35);
+
+    backdrop-filter:
+        blur(18px);
+
+    animation:
+        friendsSectionEnter
+        0.35s
+        ease
+        both;
+}
+
+
+/* العناوين */
+
+#friendsSection h2 {
+    margin:
+        0 0 20px;
+
+    text-align: center;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    color: #ffffff;
+}
+
+#friendsSection h3 {
+    margin:
+        28px 0 14px;
+
+    padding-bottom: 10px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    color: #c4b5fd;
+}
+
+
+/* ==================================================
+   👥 FRIENDS LIST
+================================================== */
+
+#friendsList {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(190px, 1fr)
+        );
+
+    gap: 12px;
+}
+
+
+/* بطاقة الصديق */
+
+#friendsList > div {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    min-height: 58px;
+
+    padding:
+        12px 14px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.92),
+            rgba(15, 23, 42, 0.92)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    color: #e2e8f0;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+#friendsList > div:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(139, 92, 246, 0.45);
+
+    box-shadow:
+        0 12px 28px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==================================================
+   📩 FRIEND REQUESTS
+================================================== */
+
+#friendRequestsList {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(230px, 1fr)
+        );
+
+    gap: 12px;
+}
+
+
+/* بطاقة طلب الصداقة */
+
+#friendRequestsList > div {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    padding:
+        14px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(120, 53, 15, 0.24),
+            rgba(30, 41, 59, 0.90)
+        );
+
+    border:
+        1px solid
+        rgba(251, 191, 36, 0.18);
+
+    color: #f8fafc;
+}
+
+
+/* أزرار طلب الصداقة */
+
+#friendRequestsList button {
+    padding:
+        8px 12px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition:
+        transform 0.2s,
+        filter 0.2s;
+}
+
+#friendRequestsList button:hover {
+    transform:
+        translateY(-2px);
+
+    filter:
+        brightness(1.1);
+}
+
+
+/* ==================================================
+   🏠 FRIEND ROOMS / READY ROOMS
+================================================== */
+
+#friendsRoomsList,
+#readyRoomsList {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px, 1fr)
+        );
+
+    gap: 14px;
+
+    width: 100%;
+}
+
+
+/* بطاقة الغرفة */
+
+#friendsRoomsList > div,
+#readyRoomsList > div {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        18px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.96),
+            rgba(15, 23, 42, 0.94)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 12px 32px
+        rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+
+/* تأثير علوي */
+
+#friendsRoomsList > div::before,
+#readyRoomsList > div::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    left: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #4f46e5
+        );
+}
+
+
+/* Hover */
+
+#friendsRoomsList > div:hover,
+#readyRoomsList > div:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(139, 92, 246, 0.45);
+
+    box-shadow:
+        0 18px 40px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+/* معلومات الغرفة */
+
+#friendsRoomsList > div > div,
+#readyRoomsList > div > div {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+
+    color: #e2e8f0;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+/* عدد اللاعبين */
+
+#friendsRoomsList > div span,
+#readyRoomsList > div span {
+    flex-shrink: 0;
+
+    padding:
+        5px 9px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(124, 58, 237, 0.16);
+
+    border:
+        1px solid
+        rgba(139, 92, 246, 0.20);
+
+    color: #c4b5fd;
+
+    font-size: 12px;
+}
+
+
+/* زر الانضمام */
+
+#friendsRoomsList > div button,
+#readyRoomsList > div button {
+    width: 100%;
+
+    min-height: 43px;
+
+    border: 0;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #4f46e5
+        );
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px
+        rgba(124, 58, 237, 0.20);
+
+    transition:
+        transform 0.2s,
+        filter 0.2s,
+        box-shadow 0.2s;
+}
+
+#friendsRoomsList > div button:hover,
+#readyRoomsList > div button:hover {
+    transform:
+        translateY(-2px);
+
+    filter:
+        brightness(1.08);
+
+    box-shadow:
+        0 12px 26px
+        rgba(124, 58, 237, 0.30);
+}
+
+
+/* ==================================================
+   ➕ ADD FRIEND INPUT
+================================================== */
+
+#friendsSection .input-group {
+    margin-bottom: 14px;
+}
+
+#friendsSection .input-group input {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding:
+        0 15px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(2, 6, 23, 0.65);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+#friendsSection .input-group input:focus {
+    border-color:
+        #8b5cf6;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(139, 92, 246, 0.10);
+}
+
+
+/* زر إضافة صديق */
+
+#friendsSection > .main-button {
+    width: 100%;
+
+    min-height: 48px;
+
+    border-radius: 14px;
+}
+
+
+/* ==================================================
+   📱 MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    #friendsSection {
+        padding: 18px;
+
+        border-radius: 20px;
+    }
+
+    #friendsList,
+    #friendRequestsList,
+    #friendsRoomsList,
+    #readyRoomsList {
+        grid-template-columns: 1fr;
+    }
+
+    #friendsSection h2 {
+        font-size: 22px;
+    }
+}
+
+
+/* ==================================================
+   ✨ ENTRY ANIMATION
+================================================== */
+
+@keyframes friendsSectionEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+/* ==================================================
+   🏠 ROOM PAGE - PROFESSIONAL UI
+================================================== */
+
+#roomPage {
+    position: relative;
+    overflow: hidden;
+
+    padding: 30px 18px;
+}
+
+
+/* البطاقة الرئيسية */
+
+#roomPage .room-card {
+    position: relative;
+    z-index: 1;
+
+    width: min(100%, 760px);
+
+    padding: 30px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15, 23, 42, 0.96),
+            rgba(30, 41, 59, 0.92)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0, 0, 0, 0.45);
+
+    backdrop-filter:
+        blur(20px);
+
+    animation:
+        roomEnter
+        0.45s
+        ease
+        both;
+}
+
+
+/* ==================================================
+   🔢 ROOM CODE
+================================================== */
+
+#roomCodeDisplay {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 190px;
+
+    padding:
+        13px 22px;
+
+    margin:
+        8px 0 20px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 58, 237, 0.20),
+            rgba(79, 70, 229, 0.14)
+        );
+
+    border:
+        1px solid
+        rgba(139, 92, 246, 0.30);
+
+    color: #c4b5fd;
+
+    font-size: 27px;
+
+    font-weight: 900;
+
+    letter-spacing: 7px;
+
+    font-variant-numeric:
+        tabular-nums;
+
+    box-shadow:
+        0 10px 30px
+        rgba(124, 58, 237, 0.14);
+}
+
+
+/* ==================================================
+   📋 COPY BUTTON
+================================================== */
+
+#roomPage button[onclick="copyRoomCode()"] {
+    min-height: 45px;
+
+    padding:
+        0 18px;
+
+    border-radius: 13px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    background:
+        rgba(30, 41, 59, 0.80);
+
+    color: #e2e8f0;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        background 0.2s,
+        border-color 0.2s;
+}
+
+#roomPage button[onclick="copyRoomCode()"]:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(51, 65, 85, 0.90);
+
+    border-color:
+        rgba(139, 92, 246, 0.40);
+}
+
+
+/* ==================================================
+   👤 CURRENT PLAYER
+================================================== */
+
+#currentPlayerName {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        7px 13px;
+
+    margin-right: 6px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(34, 197, 94, 0.10);
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.20);
+
+    color: #86efac;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+/* ==================================================
+   👥 PLAYERS HEADER
+================================================== */
+
+#roomPage #playersCount {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 38px;
+    height: 28px;
+
+    padding: 0 9px;
+
+    margin-right: 7px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(124, 58, 237, 0.18);
+
+    color: #c4b5fd;
+
+    font-size: 13px;
+
+    font-weight: 900;
+}
+
+
+/* ==================================================
+   👤 PLAYERS GRID
+================================================== */
+
+#playersList {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(230px, 1fr)
+        );
+
+    gap: 13px;
+
+    padding: 0;
+
+    margin:
+        18px 0 24px;
+
+    list-style: none;
+}
+
+
+/* ==================================================
+   🪪 PLAYER CARD
+================================================== */
+
+#playersList li {
+    list-style: none;
+}
+
+#playersList .player-card {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-height: 76px;
+
+    padding:
+        13px 14px;
+
+    border-radius: 19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.95),
+            rgba(15, 23, 42, 0.92)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    box-shadow:
+        0 10px 28px
+        rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+#playersList .player-card:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(139, 92, 246, 0.35);
+
+    box-shadow:
+        0 15px 32px
+        rgba(0, 0, 0, 0.28);
+}
+
+
+/* اللاعب الحالي */
+
+#playersList .player-card.me {
+    border-color:
+        rgba(34, 197, 94, 0.35);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 83, 45, 0.35),
+            rgba(15, 23, 42, 0.94)
+        );
+}
+
+
+/* اللاعب الميت */
+
+#playersList .player-card.dead {
+    opacity: 0.55;
+
+    filter:
+        grayscale(0.35);
+}
+
+
+/* ==================================================
+   👤 AVATAR
+================================================== */
+
+#playersList .player-avatar {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(124, 58, 237, 0.14);
+
+    border:
+        1px solid
+        rgba(139, 92, 246, 0.18);
+
+    font-size: 23px;
+}
+
+
+/* ==================================================
+   📝 PLAYER INFO
+================================================== */
+
+#playersList .player-info {
+    min-width: 0;
+
+    flex: 1;
+}
+
+#playersList .player-name {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    color: #f8fafc;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    word-break: break-word;
+}
+
+#playersList .player-status {
+    margin-top: 5px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   👑 HOST BADGE
+================================================== */
+
+#playersList .host-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        4px 8px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(251, 191, 36, 0.12);
+
+    border:
+        1px solid
+        rgba(251, 191, 36, 0.20);
+
+    color: #fcd34d;
+
+    font-size: 10px;
+
+    font-weight: 900;
+}
+
+
+/* ==================================================
+   🟢 YOU BADGE
+================================================== */
+
+#playersList .you-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        4px 8px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(34, 197, 94, 0.12);
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.20);
+
+    color: #86efac;
+
+    font-size: 10px;
+
+    font-weight: 900;
+}
+
+
+/* ==================================================
+   👢 KICK BUTTON
+================================================== */
+
+#playersList .kick-button {
+    flex-shrink: 0;
+
+    min-height: 36px;
+
+    padding:
+        0 10px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid
+        rgba(239, 68, 68, 0.18);
+
+    background:
+        rgba(127, 29, 29, 0.22);
+
+    color: #fca5a5;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
+}
+
+#playersList .kick-button:hover {
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(185, 28, 28, 0.35);
+}
+
+
+/* ==================================================
+   🎮 START GAME
+================================================== */
+
+#startGameSection {
+    margin-top: 20px;
+
+    padding:
+        20px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(2, 6, 23, 0.42);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+}
+
+#startGameButton {
+    width: 100%;
+
+    min-height: 55px;
+
+    border: 0;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #4f46e5
+        );
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px
+        rgba(124, 58, 237, 0.25);
+
+    transition:
+        transform 0.2s,
+        filter 0.2s,
+        box-shadow 0.2s;
+}
+
+#startGameButton:hover:not(:disabled) {
+    transform:
+        translateY(-3px);
+
+    filter:
+        brightness(1.08);
+
+    box-shadow:
+        0 18px 38px
+        rgba(124, 58, 237, 0.35);
+}
+
+#startGameButton:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.55;
+
+    filter:
+        grayscale(0.35);
+}
+
+
+/* ==================================================
+   ⚠️ START MESSAGE
+================================================== */
+
+#startGameMessage {
+    margin-top: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+#startGameMessage.waiting {
+    color: #fbbf24;
+}
+
+#startGameMessage.ready {
+    color: #86efac;
+}
+
+
+/* ==================================================
+   📱 MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    #roomPage {
+        padding:
+            18px 12px;
+    }
+
+    #roomPage .room-card {
+        padding:
+            22px 16px;
+
+        border-radius: 24px;
+    }
+
+    #roomCodeDisplay {
+        min-width: 160px;
+
+        font-size: 22px;
+
+        letter-spacing: 5px;
+    }
+
+    #playersList {
+        grid-template-columns: 1fr;
+    }
+
+    #playersList .player-card {
+        min-height: 70px;
+    }
+}
+
+
+/* ==================================================
+   ✨ ROOM ENTRY
+================================================== */
+
+@keyframes roomEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+.friend-online,
+.friend-offline {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        5px 9px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+.friend-online {
+    background:
+        rgba(34, 197, 94, 0.12);
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.20);
+
+    color: #86efac;
+}
+
+.friend-offline {
+    background:
+        rgba(100, 116, 139, 0.12);
+
+    border:
+        1px solid
+        rgba(100, 116, 139, 0.20);
+
+    color: #94a3b8;
+}
+
