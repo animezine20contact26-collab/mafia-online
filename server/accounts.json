@@ -1,0 +1,91 @@
+{
+  "hicham": {
+    "username": "hicham",
+    "password": "123456",
+    "friends": [
+      "Hicham",
+      "aaaa",
+      "aaa"
+    ],
+    "friendRequests": []
+  },
+  "Hicham": {
+    "username": "Hicham",
+    "password": "12345",
+    "friends": [
+      "hicham",
+      "aaaa",
+      "aa"
+    ]
+  },
+  "aaaa": {
+    "username": "aaaa",
+    "password": "4",
+    "friends": [
+      "hicham",
+      "Hicham",
+      "aaa",
+      "aa",
+      "a",
+      "aaaaa"
+    ],
+    "friendRequests": []
+  },
+  "aaa": {
+    "username": "aaa",
+    "password": "3",
+    "friends": [
+      "hicham",
+      "aaaa",
+      "a",
+      "aa",
+      "aaaaa"
+    ],
+    "friendRequests": []
+  },
+  "aa": {
+    "username": "aa",
+    "password": "2",
+    "friends": [
+      "Hicham",
+      "aaaa",
+      "aaa",
+      "a"
+    ],
+    "friendRequests": []
+  },
+  "a": {
+    "username": "a",
+    "password": "1",
+    "friends": [
+      "aaa",
+      "aa",
+      "aaaa"
+    ],
+    "friendRequests": []
+  },
+  "aaaaa": {
+    "username": "aaaaa",
+    "password": "5",
+    "friends": [
+      "aaa",
+      "aaaa"
+    ]
+  },
+  "z": {
+    "username": "z",
+    "password": "1",
+    "friends": []
+  },
+  "Admin": {
+    "username": "Admin",
+    "password": "Hicham@123",
+    "friends": []
+  },
+  "aaaaaa": {
+    "username": "aaaaaa",
+    "password": "6",
+    "friends": [],
+    "createdAt": "2026-08-17T16:59:59.426Z"
+  }
+}
